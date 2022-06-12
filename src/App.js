@@ -1,12 +1,15 @@
-import logo from './logo.svg';
+//@ts-check
 import './App.css';
+import ItemListContainer from './components/ItemListContainer';
+import NavBar from './components/NavBar';
 
 function App() {
   return (
-    <div>
-      <h1>Hola Mundo!</h1>
-    </div>
-  );
-}
+   <>
+      <NavBar />
+      <ItemListContainer greeting="Este es mi contenedor de items"/>
+
+   </>
+)}
 
 export default App;

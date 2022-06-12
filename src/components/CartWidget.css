@@ -1,0 +1,24 @@
+.cartwidget-container{
+    display:flex;
+    width: 50px;
+    height: 50px;
+    justify-content: space-around;
+    align-items: center;
+}
+.cart-img{
+    display: flex;
+    width: 25px;
+    height: 25px;
+    background-image: url(../components/img/cart-icon.png);
+    background-size: cover;
+    cursor: pointer;
+}
+.cart-img:hover{
+    transform: scale(1.05);
+}
+.cart-cant{
+    display: flex;
+    width: 10px;
+    height: 10px;
+    font-size: 16px;
+}
