@@ -6,7 +6,7 @@
     justify-content: space-between;
     align-items: center;
     position: relative;
-    padding: 1%;
+    padding: 10px;
   }
   .brand-container{
     width: fit-content;
@@ -24,17 +24,53 @@
     align-items: center;
     width: 30%;
     height: fit-content;
+    text-decoration: none;
   }
-  .menu-btn{
+  div li{
+    text-decoration: none;
     display: flex;
+    width: fit-content;
+  }
+  div li a{
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: fit-content;
     font-weight: 300;
     cursor: pointer;
+    height: 20px;
+    color: black;
+    text-decoration: none;
   }
-  .menu-btn:hover{
+  div li a:hover{
     color: wheat;
+    display: flex;
+    width: fit-content;
+  
   }
+
+  div li ul{
+    width: fit-content;
+    position: absolute;
+    background-color: rgb(176, 176, 176);
+    padding-left: 10px;
+    margin-top: 20px;
+    
+  }
+   div li ul li{
+    width:80px;
+    /* position: absolute; */
+    padding: 30px;
+    padding-left: 10px;
+    display: none;
+ 
+
+  }
+ div li:hover ul li{
+    display: flex;
+   
   
-  
+  }
+
+
