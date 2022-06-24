@@ -7,7 +7,7 @@ export default function ItemListContainer({greeting}) {
   useEffect(() => {
     let products = [
       {key: "fgdgdfggfjhfsdfsd145", id: 1, title: "Remera", price: 500, pictureURL: "Aqui va la imagen"},
-      {key: "dsfdsfdsvrsrvs12", id: 2, title: "Remera", price: 500, pictureURL: "Aqui va la imagen"}
+      {key: "dsfdsfdsvrsrvs12", id: 2, title: "Pantalón", price: 400, pictureURL: "Aqui va la imagen"}
     
     ]
     new Promise((resolve, reject) =>{
