@@ -5,11 +5,9 @@ export default function ItemCount({stock, initial, onAdd}) {
   const [count, setCount] = useState(initial)
   
   const plusCount =()=>{
-     if(count<stock){
+   
       setCount(count+1) 
-    }else{
-    alert("Alcanzaste máximo de stock")
-    }
+
   }
 
   const minCount =()=>{
@@ -40,7 +38,7 @@ export default function ItemCount({stock, initial, onAdd}) {
         <div className='btn-addtocart-container'>
             <button onClick={()=>{
               stock>1 ? addToCart() : alert("No hay stock") }} 
-              className='btn-addtocart'>Agregar al carrito</button>
+              className='btn-addtocart' disabled={count> stock}>Agregar al carrito</button>
         </div>  
     </div>
   )

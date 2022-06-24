@@ -1,23 +1,37 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './ItemListContainer.css'
-import ItemCount from './ItemCount';
+import ItemList from './ItemList'
 
 export default function ItemListContainer({greeting}) {
-
-  const onAdd =(count)=>{
-   
-        alert(`Agregaste ${count} unidad/es al carrito `)
-    }
+  const [productList, setProductList] = useState([])
+  useEffect(() => {
+    let products = [
+      {key: "fgdgdfggfjhfsdfsd145", id: 1, title: "Remera", price: 500, pictureURL: "Aqui va la imagen"},
+      {key: "dsfdsfdsvrsrvs12", id: 2, title: "Remera", price: 500, pictureURL: "Aqui va la imagen"}
+    
+    ]
+    new Promise((resolve, reject) =>{
+      setTimeout(() => {
+        resolve(products)
+      }, 2000);
+    }).then((res)=>{
+      setProductList(res)
+    })
+  
+    }, [])
+  
+ 
+  
   return (
     <>
     <div className='itemlist-container'>{greeting}
-    <ItemCount
-              stock = {5}
-              initial ={1}
-              onAdd={onAdd}
+    <ItemList productList={productList}/> 
     
-    />
+    
+    
     </div>
+   
+   
    
     </>
 
