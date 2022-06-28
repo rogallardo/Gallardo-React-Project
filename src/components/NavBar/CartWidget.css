@@ -9,7 +9,7 @@
     display: flex;
     width: 25px;
     height: 25px;
-    background-image: url(/src/img/cart-icon.png);
+    background-image: url(/public/img/cart-icon.png);
     background-size: cover;
     cursor: pointer;
 }
