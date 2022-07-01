@@ -13,7 +13,7 @@ export default function Item({ id, price, title, pictureURL, stock}) {
       <div className='item-data-container'>
           <h3 >{title}</h3>
           <h4>Precio: {price}</h4>
-          <a>Stock: {stock}</a>
+          <p>Stock: {stock}</p>
           <button><Link className='btn-verdetalle'to={`/item/${id}`}>Ver detalle</Link></button>
       </div>  
     </div>

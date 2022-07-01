@@ -10,7 +10,7 @@ export default function NavBar() {
 	
   return (
     <div className="navbar-container">
-    	<div ><Link className='brand-container' to={"/"}>DeportX</Link></div>
+    	<div ><Link className='brand-container' to={"/"}>Xports</Link></div>
     	<div className='menu-container'>
         	<li><Link to={"/"}>Products</Link>
 			  	<ul>
