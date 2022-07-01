@@ -13,10 +13,13 @@
     height: fit-content;
     cursor: pointer;
     font-weight: 800;
+    text-decoration: none;
+    color: black;
   }
   .brand-container:hover{
     color:wheat;
     transform: scale(1.05);
+    text-decoration: none;
   }
   .menu-container{
     display: flex;

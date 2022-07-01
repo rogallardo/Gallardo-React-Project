@@ -1,19 +1,21 @@
 import React from 'react'
-import ItemCount from './ItemCount'
+import {Link} from 'react-router-dom'
+
 import './Item.css' 
 
 export default function Item({ id, price, title, pictureURL, stock}) {
-    const onAdd =()=>{
-        alert(`Agregaste unidad/es al carrito `)
-    }
+    
   return (
-    <div className='card'>
-        <h1>{pictureURL}</h1>
-        <h2>{title}</h2>
-        <h2>Precio: {price}</h2>
-        <ItemCount  stock = {stock}
-                    initial ={1}
-                    onAdd={onAdd}/>
+    <div className='item-card'>
+       <div className='item-img-container'>
+            <img className='item-img'src={pictureURL} alt={title} />
+        </div>
+      <div className='item-data-container'>
+          <h3 >{title}</h3>
+          <h4>Precio: {price}</h4>
+          <a>Stock: {stock}</a>
+          <button><Link className='btn-verdetalle'to={`/item/${id}`}>Ver detalle</Link></button>
+      </div>  
     </div>
   )
 }

@@ -2,15 +2,17 @@ import React, { useState, useEffect } from 'react'
 import { getArray } from '../helpers/getArray'
 import { productsArray } from '../../data/data'
 import ItemDetail from './ItemDetail'
+import { useParams } from "react-router-dom"
 
 export default function ItemDetailContainer() {
     const [products, setProducts] = useState ({})
     const [loading, setLoading] = useState (true)
+    const { itemId } = useParams()
     
     useEffect(() => {
         getArray(productsArray)
         .then((res)=>{
-            const item = res.find((item)=> item.id===1)
+            const item = res.find((item)=> item.id===Number(itemId))
             setProducts(item)
         })
         .catch((err)=>{
@@ -19,7 +21,7 @@ export default function ItemDetailContainer() {
         .finally(()=>{
             setLoading(false)
         })
-    }, [])
+    }, [itemId])
     
   return (
     <div>

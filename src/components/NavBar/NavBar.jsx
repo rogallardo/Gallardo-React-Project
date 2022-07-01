@@ -2,6 +2,7 @@
 import React from 'react'
 import CartWidget from './CartWidget'
 import './NavBar.css'
+import { Link } from 'react-router-dom'
 
 
 export default function NavBar() {
@@ -9,18 +10,15 @@ export default function NavBar() {
 	
   return (
     <div className="navbar-container">
-    	<div onClick={()=>{alert("clickeaste Logo")}} className='brand-container'>Logos</div>
+    	<div ><Link className='brand-container' to={"/"}>DeportX</Link></div>
     	<div className='menu-container'>
-        	<li onClick={()=>{ alert("clickeaste Main")}} ><a href=''>Main</a></li>
-      		<li><a href=''>Products</a>
+        	<li><Link to={"/"}>Products</Link>
 			  	<ul>
-					<li onClick={()=>{ alert("clickeaste Producto 1")}}><a href=''>Producto 1</a></li>
-					<li onClick={()=>{ alert("clickeaste Producto 2")}}><a href=''>Producto 2</a></li>
-					<li onClick={()=>{ alert("clickeaste Producto 3")}}><a href=''>Producto 3</a></li>
-					<li onClick={()=>{ alert("clickeaste Producto 4")}}><a href=''>Producto 4</a></li>
+					<li > <Link to={"/category/remeras"}>Remeras</Link></li>
+					<li > <Link to={"/category/pantalones"}>Pantalones</Link></li>
+					<li > <Link to={"/category/camperas"}>Camperas</Link></li>
 			  	</ul>
 			</li>
-      		<li onClick={()=>{ alert("clickeaste Us")}} ><a href=''>Us</a></li>
 		</div>
 		<CartWidget cant={0}/>
   </div>

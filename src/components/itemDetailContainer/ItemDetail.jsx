@@ -1,7 +1,11 @@
 import React from 'react'
 import './ItemDetail.css'
+import ItemCount from '../ItemCount/ItemCount'
 
-export default function ItemDetail({title, price, pictureURL, description, stock}) {
+export default function ItemDetail({title, price, pictureURL, description, stock,}) {
+    const onAdd =(count)=>{
+        alert(`Agregaste ${count} unidad/es al carrito `)
+    }
   return (
 <div className='detail-container'>
     <div className='img-container'>
@@ -17,6 +21,10 @@ export default function ItemDetail({title, price, pictureURL, description, stock
              </h3>
             <p>{description}</p>
         </div>
+        <ItemCount  stock = {stock}
+                    initial ={1}
+                    onAdd={onAdd}/>
+  
         
         
     </div>

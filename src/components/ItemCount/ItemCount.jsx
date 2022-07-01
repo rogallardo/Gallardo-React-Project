@@ -2,12 +2,9 @@ import React, { useState } from 'react'
 import './ItemCount.css'
 
 export default function ItemCount({stock, initial, onAdd}) {
-  const [count, setCount] = useState(initial)
-  
-  const plusCount =()=>{
-   
+  const [count, setCount] = useState(initial) 
+  const plusCount =()=>{ 
       setCount(count+1) 
-
   }
 
   const minCount =()=>{
@@ -20,20 +17,20 @@ export default function ItemCount({stock, initial, onAdd}) {
     onAdd(count)
   }
 
- 
 
-
- 
   return (
     <div className = 'itemcount-container'>
         <div className='btns-container'>
+        <button onClick={()=>{
+             minCount()
+            }}className='btn-container'>-</button>
+        
+        <div className='count-container'> {count} </div>
+            
             <button onClick={()=>{
              plusCount()
             }}className='btn-container'>+</button>
-            <div className='count-container'> {count} </div>
-            <button onClick={()=>{
-             minCount()
-            }}className='btn-container'>-</button>
+          
         </div>
         <div className='btn-addtocart-container'>
             <button onClick={()=>{
