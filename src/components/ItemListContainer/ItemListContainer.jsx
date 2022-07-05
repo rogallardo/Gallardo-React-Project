@@ -5,6 +5,7 @@ import { getArray } from '../helpers/getArray'
 import { productsArray } from '../../data/data'
 import { useParams } from "react-router-dom"
 
+
 export default function ItemListContainer() {
   const [productList, setProductList] = useState([])
   const [loading, setLoading] = useState(false)

@@ -4,7 +4,7 @@ import ItemCount from '../ItemCount/ItemCount'
 
 export default function ItemDetail({title, price, pictureURL, description, stock,}) {
     const onAdd =(count)=>{
-        alert(`Agregaste ${count} unidad/es al carrito `)
+        alert(`Agregaste ${count} unidad/es al carrito de ${title}`)
     }
   return (
 <div className='detail-container'>
