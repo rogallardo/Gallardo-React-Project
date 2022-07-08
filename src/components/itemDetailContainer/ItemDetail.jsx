@@ -1,11 +1,15 @@
 import React from 'react'
 import './ItemDetail.css'
 import ItemCount from '../ItemCount/ItemCount'
+import { useContext } from 'react'
+import { myContext } from '../CardContext/CardContext'
 
-export default function ItemDetail({title, price, pictureURL, description, stock,}) {
+export default function ItemDetail({title, price, pictureURL, description, stock}) {
+    const {pepe} = useContext(myContext)
     const onAdd =(count)=>{
-        alert(`Agregaste ${count} unidad/es al carrito de ${title}`)
+        alert(`Agregaste ${count} unidad/es de ${title} al carrito `)
     }
+    
   return (
 <div className='detail-container'>
     <div className='img-container'>
@@ -21,12 +25,10 @@ export default function ItemDetail({title, price, pictureURL, description, stock
              </h3>
             <p>{description}</p>
         </div>
+
         <ItemCount  stock = {stock}
                     initial ={1}
-                    onAdd={onAdd}/>
-  
-        
-        
+                    onAdd={onAdd}/>      
     </div>
 </div>
   )

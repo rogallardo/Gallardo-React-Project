@@ -1,7 +1,13 @@
 import React, { useState } from 'react'
 import './ItemCount.css'
+import { useContext } from 'react'
+import { myContext } from '../CardContext/CardContext'
 
 export default function ItemCount({stock, initial, onAdd}) {
+  const {pepe} = useContext(myContext)
+  
+  
+  
   const [count, setCount] = useState(initial) 
   const plusCount =()=>{ 
       setCount(count+1) 
@@ -15,6 +21,7 @@ export default function ItemCount({stock, initial, onAdd}) {
 
   const addToCart =()=>{
     onAdd(count)
+    pepe()
   }
 
 
