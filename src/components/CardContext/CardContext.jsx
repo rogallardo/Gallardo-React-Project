@@ -6,17 +6,24 @@ import { useState } from 'react'
 export const myContext = createContext(null)
 
 export default function CardContext({ children }) {
-    const pepe =()=>{
-        console.log("hola")
-    }
+
     const [cart, setCart] = useState([])
   
-    const addItem=(item, quantity)=>{
-        
+    const addItem = () =>{
+      
+    
+  
+    }
+
+    const removeItem = (itemId) =>{
+
+    }
+    const clear = () =>{
+
     }
  
   return (
-    <myContext.Provider value={{pepe}}>
+    <myContext.Provider value={{addItem}}>
         {children}
     </myContext.Provider>
   )
