@@ -4,7 +4,7 @@ import { useContext } from 'react'
 import { myContext } from '../CardContext/CardContext'
 
 export default function ItemCount({stock, initial, onAdd}) {
-  const {AddItem} = useContext(myContext)
+  const {addItem} = useContext(myContext)
   
   
   
@@ -21,7 +21,9 @@ export default function ItemCount({stock, initial, onAdd}) {
 
   const addToCart =()=>{
     onAdd(count)
-    AddItem()
+    addItem()
+   
+  
  
   }
 
@@ -42,7 +44,7 @@ export default function ItemCount({stock, initial, onAdd}) {
         </div>
         <div className='btn-addtocart-container'>
             <button onClick={()=>{
-              stock>1 ? addToCart() : alert("No hay stock") }} 
+              stock>1 ? addToCart() : alert("No hay stock")  }} 
               className='btn-addtocart' disabled={count> stock}>Agregar al carrito</button>
         </div>  
     </div>

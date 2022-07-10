@@ -6,20 +6,11 @@ import { useState } from 'react'
 export const myContext = createContext(null)
 
 export default function CardContext({ children }) {
-
+ 
     const [cart, setCart] = useState([])
   
-    const addItem = () =>{
-      
-    
-  
-    }
-
-    const removeItem = (itemId) =>{
-
-    }
-    const clear = () =>{
-
+    const addItem =()=>{
+       
     }
  
   return (
