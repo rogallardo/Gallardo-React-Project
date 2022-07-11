@@ -31,7 +31,7 @@ export default function ItemDetailContainer() {
                 Cargando..
             </div>
             : 
-            <ItemDetail {...products}/>
+            <ItemDetail products={products}/>
         }
     </div>
   )

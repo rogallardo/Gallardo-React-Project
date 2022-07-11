@@ -3,15 +3,15 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import CardContext from './components/CardContext/CardContext';
+import CartContext from './components/CartContext/CartContext';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   // <React.StrictMode>
-  <CardContext>
+  <CartContext>
      <App />
-  </CardContext>
+  </CartContext>
    
   /* </React.StrictMode> */
 );

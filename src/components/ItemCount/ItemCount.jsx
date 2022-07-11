@@ -1,30 +1,23 @@
 import React, { useState } from 'react'
 import './ItemCount.css'
-import { useContext } from 'react'
-import { myContext } from '../CardContext/CardContext'
+
 
 export default function ItemCount({stock, initial, onAdd}) {
-  const {addItem} = useContext(myContext)
-  
-  
-  
-  const [count, setCount] = useState(initial) 
+
+  const [quantity, setQuantity] = useState(initial) 
   const plusCount =()=>{ 
-      setCount(count+1) 
+      setQuantity(quantity+1)    
   }
 
   const minCount =()=>{
-    if(count>1){
-      setCount(count-1)
+    if(quantity>1){
+      setQuantity(quantity-1)
     }
   }
 
   const addToCart =()=>{
-    onAdd(count)
-    addItem()
-   
-  
- 
+    
+    onAdd(quantity)
   }
 
 
@@ -35,7 +28,7 @@ export default function ItemCount({stock, initial, onAdd}) {
              minCount()
             }}className='btn-container'>-</button>
         
-        <div className='count-container'> {count} </div>
+        <div className='count-container'> {quantity} </div>
             
             <button onClick={()=>{
              plusCount()
@@ -45,7 +38,7 @@ export default function ItemCount({stock, initial, onAdd}) {
         <div className='btn-addtocart-container'>
             <button onClick={()=>{
               stock>1 ? addToCart() : alert("No hay stock")  }} 
-              className='btn-addtocart' disabled={count> stock}>Agregar al carrito</button>
+              className='btn-addtocart' disabled={quantity> stock}>Agregar al carrito</button>
         </div>  
     </div>
   )
