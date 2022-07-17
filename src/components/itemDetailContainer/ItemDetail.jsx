@@ -7,21 +7,26 @@ import { useState } from 'react'
 import { myContext } from '../CartContext/CartContext'
 import { Link } from 'react-router-dom'
 
+/*
+  const addItem = (product, quantity) => {
 
+    if (isInCart(product.id)) {
+      const pepe = cart.map(product => product.id === id) ? {...product, quantity: product.quantity + quantity} : product
+      setCart([...pepe])
+    } else {
+      setCart([...cart, { ...product, quantity: quantity }])
+    }
+  } */
 
 
 export default function ItemDetail({products}) {
+
     const [cambiarBtn, setCambiarBtn] =  useState(false)
     const {addItem} = useContext(myContext)
-   
-
-    
-    const onAdd = (quantity) => {
-
-        alert(`Agregaste ${quantity} unidad/es de ${products.title} al carrito `)
+    const onAdd = (count) => {
+        alert(`Agregaste ${count} unidad/es de ${products.title} al carrito `)
         setCambiarBtn(true)
-        addItem({...products}, quantity)
-       
+        addItem({...products}, count)     
     }
 
   return (

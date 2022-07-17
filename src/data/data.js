@@ -1,7 +1,8 @@
 export const productsArray = [
     {
-    key: "fgdgdfggfjhfsdfsd", 
-    id: 1, title: "Remera térmica", 
+     
+    id: 1, 
+    title: "Remera térmica", 
     price: 5500, 
     pictureURL: "../img/remera1.jpg", 
     description: "Remera térmica Adidas, ideal para entrenamiento en temperaturas bajas.",
@@ -10,7 +11,7 @@ export const productsArray = [
   },
 
     {
-    key: "dsfdsfdsvrsrvs12", 
+   
     id: 2, title: "Remera x-fit", 
     price: 4400, 
     pictureURL: "../img/remera2.jpg", 
@@ -19,7 +20,7 @@ export const productsArray = [
     category: "remeras"
   },
     {
-    key: "dsfdsfdsvrsrvs12", 
+   
     id: 3, 
     title: "Campera Cover-Fit", 
     price: 5600, 
@@ -30,7 +31,7 @@ export const productsArray = [
     
   },
   {
-    key: "dsfdsfdsvrsrvs12", 
+ 
     id: 4, 
     title: "Pantalón x-fit", 
     price: 4400, 

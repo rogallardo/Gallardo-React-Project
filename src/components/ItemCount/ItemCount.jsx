@@ -4,20 +4,19 @@ import './ItemCount.css'
 
 export default function ItemCount({stock, initial, onAdd}) {
 
-  const [quantity, setQuantity] = useState(initial) 
+  const [count, setCount] = useState(initial) 
   const plusCount =()=>{ 
-      setQuantity(quantity+1)    
+      setCount(count+1)    
   }
 
   const minCount =()=>{
-    if(quantity>1){
-      setQuantity(quantity-1)
+    if(count>1){
+      setCount(count-1)
     }
   }
 
-  const addToCart =()=>{
-    
-    onAdd(quantity)
+  const addToCart =()=>{  
+    onAdd(count)
   }
 
 
@@ -28,7 +27,7 @@ export default function ItemCount({stock, initial, onAdd}) {
              minCount()
             }}className='btn-container'>-</button>
         
-        <div className='count-container'> {quantity} </div>
+        <div className='count-container'> {count} </div>
             
             <button onClick={()=>{
              plusCount()
@@ -38,7 +37,7 @@ export default function ItemCount({stock, initial, onAdd}) {
         <div className='btn-addtocart-container'>
             <button onClick={()=>{
               stock>1 ? addToCart() : alert("No hay stock")  }} 
-              className='btn-addtocart' disabled={quantity> stock}>Agregar al carrito</button>
+              className='btn-addtocart' disabled={count> stock}>Agregar al carrito</button>
         </div>  
     </div>
   )

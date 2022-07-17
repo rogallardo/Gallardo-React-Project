@@ -20,7 +20,7 @@ export default function NavBar() {
 			  	</ul>
 			</li>
 		</div>
-		<CartWidget />
+		<CartWidget  />
   </div>
   
   
