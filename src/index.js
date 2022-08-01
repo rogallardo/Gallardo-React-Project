@@ -4,6 +4,18 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import CartContext from './components/CartContext/CartContext';
+import { initializeApp } from "firebase/app";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyA2lJszZvidexiu3WQh41k75iUBxns1Hsk",
+  authDomain: "ecommerce-xsports.firebaseapp.com",
+  projectId: "ecommerce-xsports",
+  storageBucket: "ecommerce-xsports.appspot.com",
+  messagingSenderId: "611202281242",
+  appId: "1:611202281242:web:0fc9576a4b566ea891c6a3"
+};
+
+initializeApp(firebaseConfig);
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

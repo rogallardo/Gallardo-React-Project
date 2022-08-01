@@ -6,7 +6,6 @@ export default function CardContext({ children }) {
  
     const [cart, setCart] = useState([])
    
-   
     useEffect(() => {
       console.log(cart)
 
@@ -22,7 +21,7 @@ export default function CardContext({ children }) {
 
     const addItem = (item, quantity) => {
       if (isInCart(item.id)) {
-        const productUpdate = cart.map(product => ( {...product, quantity:  product.quantity + quantity, total: item.price * quantity}))
+        const productUpdate = cart.map((product) => product.id === item.id ? ( {...product, quantity:  product.quantity + quantity, total: item.price * quantity}) : product)
         setCart([...productUpdate])
       } else {
         setCart([...cart, { ...item, quantity: quantity, total: item.price * quantity}])     

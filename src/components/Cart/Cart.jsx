@@ -4,6 +4,7 @@ import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import './Cart.css'
 
+
 export default function Cart() {
     const { cart, removeItem } = useContext(myContext)
     return (
@@ -16,7 +17,7 @@ export default function Cart() {
                             {cart.length && cart.map((item) =>
                                 <div >
                                     <li key={item.id}className='itemoncart-container' >
-                                        <div><img className='imgoncart-container' src={item.pictureURL} alt={item.title} /></div>
+                                        <div><img className='imgoncart-container' src={item.image} alt={item.title} /></div>
                                         <div><span>Product: {item.title}</span></div>
                                         <div><span>Quantity: {item.quantity}</span></div>
                                         <div><span>Total: ${item.total},00 </span></div>
@@ -26,11 +27,14 @@ export default function Cart() {
                             )}
                         </ul>
                         <span>Total: ${cart.reduce((p, c) => p + c.total, 0)},00</span>
+                        <button > <Link to='/checkout' > Finalizar compra</Link></button>
+                        
+
                     </div>
 
                 </>
 
-                : <Link to="/"><span>No hay productos aún</span></Link>
+                : <Link to="/"><span>No hay productos aún, click aqui para volver al inicio</span></Link>
 
             }
         </div>

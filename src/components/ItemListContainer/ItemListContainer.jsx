@@ -1,35 +1,54 @@
 import React, { useEffect, useState } from 'react'
-import './ItemListContainer.css'
-import ItemList from './ItemList'
-import { getArray } from '../helpers/getArray'
-import { productsArray } from '../../data/data'
+import ItemList from './ItemList';
+import "./ItemListContainer.css";
 import { useParams } from "react-router-dom"
-
+import { Item } from './Item';
+import {collection, where, getDocs, getFirestore, query} from 'firebase/firestore'
 
 export default function ItemListContainer() {
   const [productList, setProductList] = useState([])
-  const [loading, setLoading] = useState(false)
-  const { categoryId } = useParams()
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(false)
+  const {categoryId} = useParams();
+  
+  useEffect(() =>{
+    const db = getFirestore();
+    const collectionRef = collection(db, 'products');
+     
+    if (!categoryId){
+      let collectionFound = new Promise((res, rej)=>{
+        setTimeout(()=>{res(getDocs(collectionRef))}, 1000)
+      })
 
-  useEffect(() => {
-    setLoading(true)
-        getArray(productsArray)
-        .then((res)=>{
-          categoryId?
-          setProductList(res.filter((item)=> item.category === categoryId))
-          :
-          setProductList(res)
-        })
-        .catch((err)=>{
-          console.log(err)
-        })
-        .finally(()=>{
-          setLoading(false)
-        })
-    }, [categoryId])
-  
- 
-  
+      collectionFound
+      .then((res)=> {
+        const arrNormalizado = res.docs.map((item)=>({...item.data(), id: item.id}));
+        setProductList(arrNormalizado);
+      })
+      .catch((error)=>{
+        setError(true);
+      })
+    .finally(()=>{
+      setLoading(false);
+    })
+    } else{
+      const collectionFiltrada = query(collectionRef, where('category', '==', categoryId));
+      let arrayFiltrado = new Promise((resolve, reject)=>{
+        setTimeout(()=>{ resolve(getDocs(collectionFiltrada))}, 2000)
+      })
+
+      arrayFiltrado.then((res)=> {
+        const arrNormalizado = res.docs.map((item)=>({...item.data(), id: item.id}));
+        setProductList(arrNormalizado);
+      })
+      .catch((error)=>{
+        setError(true);
+      })
+      .finally(()=>{
+        setLoading(false);
+      })
+    }
+  }, [categoryId]);
   return (
     <>
  
