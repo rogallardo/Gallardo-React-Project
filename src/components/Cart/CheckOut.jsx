@@ -9,13 +9,60 @@ import swal from 'sweetalert'
 export default function CheckOut() {
 
     const [name, setName] = useState('');
-    const [tel, setTel] = useState('');
+    const [phone, setPhone] = useState('');
     const [email, setEmail] = useState('');
     const { cart } = useContext(myContext)
+    function CamposValidados(){
+        if(name===""){
+            swal({
+                title: "Error en el formulario",
+                text: `Por favor revise el nombre`,
+                icon: "warning",
+            })
+         }else if (phone===""){
+            swal({
+                title: "Error en el formulario",
+                text: `Por favor revise el teléfono`,
+                icon: "warning",
+            })
+        
+        }else if(email===""){
+            swal({
+                title: "Error en el formulario",
+                text: `Por favor revise el email`,
+                icon: "warning",
+            })
+
+        }else{
+            handleClickBuy();
+        }
+    }
+
+    function validarEmail(valor){
+        let re = /\S+@\S+\.\S+/;
+        if(  re.test(valor)  && (valor!=="")){
+            setEmail(valor)
+            localStorage.setItem('email', JSON.stringify(valor))    
+        }
+      }
+      function validarName(valor){            
+        if( (/^[A-z ]+$/.test(valor)) && (valor!=="") ){
+        setName(valor)
+        localStorage.setItem('name', JSON.stringify(valor))    
+        } 
+      }
+
+      function validarPhone(valor){
+        let numTel = /^\d{8,12}$/;
+        if( valor.match(numTel)  && (valor!=="") ){
+            setPhone(valor)
+            localStorage.setItem('phone', JSON.stringify(valor))    
+        }
+      }
 
     function handleClickBuy() {
         const orders = {
-            buyer: { name, tel, email },
+            buyer: { name, phone, email },
             cart: cart
         };
         const db = getFirestore();
@@ -27,10 +74,17 @@ export default function CheckOut() {
                 icon: "success",
             })
         )
-
-        console.log(cart)
+        clearForm()
 
     }
+    function clearForm(){
+        setName("");
+        localStorage.setItem('name', JSON.stringify(""))    
+        setEmail("");
+        localStorage.setItem('email', JSON.stringify(""))    
+        setPhone("")
+        localStorage.setItem('phone', JSON.stringify(""))    
+      }
 
     return (
         <div className='checkout-container'>
@@ -61,21 +115,21 @@ export default function CheckOut() {
                 <div>
                     <div>
                         <p>Ingrese su nombre:</p>
-                        <input onChange={(e) => setName(e.target.value)} type={'text'} placeholder={'ingrese nombre'} className='input'></input>
+                        <input onChange={(e) => validarName(e.target.value)} type={'text'} placeholder={'ingrese nombre'} className='input'></input>
                     </div>
 
                     <div>
                         <p>Ingrese su telefono:</p>
-                        <input onChange={(e) => setTel(e.target.value)} type={'text'} placeholder={'ingrese tel'} className='input'></input>
+                        <input onChange={(e) => validarPhone(e.target.value)} type={'text'} placeholder={'ingrese tel'} className='input'></input>
                     </div>
                     <div>
                         <p>Ingrese su email:</p>
-                        <input onChange={(e) => setEmail(e.target.value)} type={'text'} placeholder={'ingrese email'} className='input'></input>
+                        <input onChange={(e) => validarEmail(e.target.value)} type={'text'} placeholder={'ingrese email'} className='input'></input>
                     </div>
                 </div>
 
 
-                <button onClick={handleClickBuy} className='comprar-btn'>Comprar</button>
+                <button onClick={CamposValidados} className='comprar-btn'>Comprar</button>
 
             </div>
 

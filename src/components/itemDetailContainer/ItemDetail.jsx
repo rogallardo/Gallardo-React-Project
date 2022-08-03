@@ -6,6 +6,7 @@ import { useState } from 'react'
 import { useContext } from 'react'
 import { myContext } from '../CartContext/CartContext'
 import { Link } from 'react-router-dom'
+import swal from 'sweetalert'
 
 /*
   const addItem = (product, quantity) => {
@@ -24,9 +25,14 @@ export default function ItemDetail({products}) {
     const [cambiarBtn, setCambiarBtn] =  useState(false)
     const {addItem} = useContext(myContext)
     const onAdd = (count) => {
-        alert(`Agregaste ${count} unidad/es de ${products.title} al carrito `)
+        
         setCambiarBtn(true)
-        addItem({...products}, count)     
+        addItem({...products}, count) 
+        swal({
+          title: "Producto agregado",
+          text: `Agregaste ${count} unidad/es de ${products.title} al carrito `,
+          icon: "success",
+      })    
     }
 
   return (
@@ -48,7 +54,7 @@ export default function ItemDetail({products}) {
             {
                  cambiarBtn ?
                  <div>
-                     <button ><Link className='btn-finishBuy'to={`/cart`}>Finalizar compra</Link></button>
+                     <button className='finalizarcompra-btn'><Link className='btn-finishBuy'to={`/cart`}>Finalizar compra</Link></button>
                  </div>
            
                 : <ItemCount    stock = {products.stock}

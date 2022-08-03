@@ -7,6 +7,7 @@ import './Cart.css'
 
 export default function Cart() {
     const { cart, removeItem } = useContext(myContext)
+    console.log(cart)
     return (
 
         <div>
@@ -20,7 +21,7 @@ export default function Cart() {
                                         <div><img className='imgoncart-container' src={item.image} alt={item.title} /></div>
                                         <div><span>Product: {item.title}</span></div>
                                         <div><span>Quantity: {item.quantity}</span></div>
-                                        <div><span>Total: ${item.total},00 </span></div>
+                                        <div><span>Total: $1000,00 </span></div>
                                         <button className='eliminar-btn' onClick={() => { removeItem(item.id) }}>Eliminar</button>
                                     </li>
                                 </div>
