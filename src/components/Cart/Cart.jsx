@@ -29,15 +29,15 @@ export default function Cart() {
                              
                             )}
                         </ul>
-                        <div className='total-container'>
+                        <div style={{ textDecoration: 'none' }} className='total-container'>
                         <span>Total: ${cart.reduce((p, c) => p + c.total, 0)},00</span>
                             </div>
-                            <div className='btncart-container'>
+                            <div style={{ textDecoration: 'none' }} className='btncart-container'>
                                  <div>
-                               <button className='finalizarcompra-btn'> <Link style={{ textDecoration: 'none' }} to='/checkout' > Finalizar compra</Link></button> 
+                               <button style={{ textDecoration: 'none' }} className='finalizarcompra-btn'> <Link style={{ textDecoration: 'none' }} to='/checkout' > Finalizar compra</Link></button> 
                             </div>
                             <div>
-                            <button className='vaciar-btn' onClick={() => { clear() }}>Vaciar carrito</button>
+                            <button style={{ textDecoration: 'none' }} className='vaciar-btn' onClick={() => { clear() }}>Vaciar carrito</button>
                             </div>
                             </div>
                            

@@ -1,3 +1,15 @@
+@media only screen and (max-width: 600px) {
+    .checkout-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        background-color: rgb(245, 245, 245);
+        min-height: 90vh;
+    
+    }
+}
+
 .checkout-container{
     display: flex;
     justify-content: space-around;
@@ -16,8 +28,9 @@
 }
 .itemoncheckout-container{
     display: flex;
-    height: 100px;
-    width: 40vw;   
+    flex-direction: column;
+    height: fit-content;
+    width: 300px;   
     justify-content: space-around;
     align-items: center;
     padding: 3px;
@@ -30,7 +43,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 20vw;
+    min-width: 300px;
     border: solid 1px grey;
     border-radius: 5px;
     height: 80vh;

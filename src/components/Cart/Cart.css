@@ -1,3 +1,19 @@
+@media only screen and (max-width: 600px) {
+    .itemoncart-container{
+    display: flex;
+    flex-direction: column;
+        min-height: 200px;
+    width: 300px;
+    border: solid 1px rgb(180, 41, 41);
+    justify-content: space-around;
+    align-items: center;
+    
+}
+}
+
+
+
+
 .itemoncart-container{
     display: flex;
     height: 100px;
@@ -30,10 +46,10 @@
 }
 .btncart-container{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     height: 50px;
-    width: 300px;
-    padding: 10px;
+    width: 100%;
+ 
    
 }
 .finalizarcompra-btn{

@@ -1,3 +1,27 @@
+@media only screen and (max-width: 600px) {
+    .detail-container{
+        display: flex;
+        flex-direction: column;
+        height: 90vh;
+        width: 90vw;
+    }
+    .img-container{
+        display: flex;
+        min-width: 50%;
+        height: 50%;
+    }
+    .data-container{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        height: 50%;
+      
+        align-items: center;
+    
+    }
+
+}
+
 .detail-container{
     display: flex;
     height: 90vh;
