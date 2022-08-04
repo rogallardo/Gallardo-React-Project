@@ -28,11 +28,7 @@ export default function ItemDetail({products}) {
         
         setCambiarBtn(true)
         addItem({...products}, count) 
-        swal({
-          title: "Producto agregado",
-          text: `Agregaste ${count} unidad/es de ${products.title} al carrito `,
-          icon: "success",
-      })    
+         
     }
 
   return (
@@ -54,7 +50,7 @@ export default function ItemDetail({products}) {
             {
                  cambiarBtn ?
                  <div>
-                     <button className='finalizarcompra-btn'><Link className='btn-finishBuy'to={`/cart`}>Finalizar compra</Link></button>
+                     <button className='finalizarcompra-btn'><Link style={{ textDecoration: 'none' }} className='btn-finishBuy'to={`/cart`}>Ver carrito</Link></button>
                  </div>
            
                 : <ItemCount    stock = {products.stock}

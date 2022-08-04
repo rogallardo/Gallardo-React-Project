@@ -94,42 +94,45 @@ export default function CheckOut() {
                 <div>
                     <ul>
                         {cart.map((item) =>
-                            <div >
+                            
                                 <li key={item.id} className='itemoncheckout-container' >
                                     <div><img className='imgoncart-container' src={item.image} alt={item.title} /></div>
-                                    <div><span>Product: {item.title}</span></div>
-                                    <div><span>Quantity: {item.quantity}</span></div>
+                                    <div><span>Producto: {item.title}</span></div>
+                                    <div><span>Cantidad: {item.quantity}</span></div>
                                     <div><span>Total: ${item.total},00 </span></div>
 
                                 </li>
-                            </div>
+                            
                         )}
 
                     </ul>
                 </div>
 
-                <h2>Total: ${cart.reduce((p, c) => p + c.total, 0)},00</h2>
+                <h2 >Total: ${cart.reduce((p, c) => p + c.total, 0)},00</h2>
             </div>
             <div className='form-container'>
                 <h2 className='completar-title'>Completar para finalizar compra</h2>
                 <div>
                     <div>
-                        <p>Ingrese su nombre:</p>
-                        <input onChange={(e) => validarName(e.target.value)} type={'text'} placeholder={'ingrese nombre'} className='input'></input>
+                        <p className='textform'>Ingrese su nombre:</p>
+                        <input onChange={(e) => validarName(e.target.value)} type={'text'} placeholder={'Juan Perez'} className='input'></input>
                     </div>
 
                     <div>
-                        <p>Ingrese su telefono:</p>
-                        <input onChange={(e) => validarPhone(e.target.value)} type={'text'} placeholder={'ingrese tel'} className='input'></input>
+                        <p className='textform'>Ingrese su telefono:</p>
+                        <input onChange={(e) => validarPhone(e.target.value)} type={'text'} placeholder={'1500000000'} className='input'></input>
                     </div>
                     <div>
-                        <p>Ingrese su email:</p>
-                        <input onChange={(e) => validarEmail(e.target.value)} type={'text'} placeholder={'ingrese email'} className='input'></input>
+                        <p className='textform'>Ingrese su email:</p>
+                        <input onChange={(e) => validarEmail(e.target.value)} type={'text'} placeholder={'ejemplo@ejemplo.com'} className='input'></input>
                     </div>
                 </div>
 
-
-                <button onClick={CamposValidados} className='comprar-btn'>Comprar</button>
+                <div>
+                <button onClick={CamposValidados} className='comprar-btn'>Confirmar compra</button>
+                    </div>
+                                
+                
 
             </div>
 

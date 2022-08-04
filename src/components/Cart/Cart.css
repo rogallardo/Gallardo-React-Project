@@ -23,3 +23,41 @@
     width: 100px;
     border-radius: 100px;
 }
+.total-container{
+    display: flex;
+    width: 90vw;
+    justify-content: right;
+}
+.btncart-container{
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    width: 300px;
+    padding: 10px;
+   
+}
+.finalizarcompra-btn{
+    display:flex;
+    height: 30px;
+    width: 150px;
+    align-items: center;
+    justify-content: center;
+    border: solid 1px grey;
+    cursor:pointer;
+}
+.vaciar-btn{
+    display:flex;
+    height: 30px;
+    width: 150px;
+    align-items: center;
+    justify-content: center;
+    border: solid 1px grey;
+    cursor:pointer;
+}
+.msg-container{
+    display: flex;
+    height: 80vh;
+    width: 98vw;
+    justify-content: center;
+    align-items: center;
+}

@@ -32,11 +32,17 @@
     align-items: center;
 }
 .btn-verdetalle{
-    text-decoration: none;
-    color:black;
-    border-color: rgb(185, 185, 185);
-    border-radius: 3px;
+    display:flex;
+    height: 30px;
+    width: 150px;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    cursor:pointer;
 }
 .btn-verdetalle:hover{
-    background-color: antiquewhite;
+    color: rgb(72, 72, 72);
+    background-color: rgb(255, 255, 255);
+
+    border: white ;
 }

@@ -14,7 +14,7 @@ export default function Item({ id, price, title, image, stock}) {
           <h3 >{title}</h3>
           <h4>Precio: {price}</h4>
           <p>Stock: {stock}</p>
-          <button><Link className='btn-verdetalle'to={`/item/${id}`}>Ver detalle</Link></button>
+          <button><Link style={{ textDecoration: 'none' }} className='btn-verdetalle'to={`/item/${id}`}>Ver detalle</Link></button>
       </div>  
     </div>
   )

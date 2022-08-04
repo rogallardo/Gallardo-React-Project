@@ -34,7 +34,7 @@ export default function ItemDetailContainer() {
         {
             loading?
             <div>
-                Cargando..
+                Cargando...
             </div>
             : 
             <ItemDetail products={products}/>
